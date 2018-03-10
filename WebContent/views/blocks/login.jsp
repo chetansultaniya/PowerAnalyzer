@@ -1,24 +1,30 @@
 <body  style="background-image:url('${baseURL}/assets/img/bg.jpg');">
  <div class="container">
     <div class="card card-login mx-auto mt-5">
+     <c:if test="${error_msg!=''}">
+      <h6 align="center">${error_msg}</h6>
+     </c:if>
+      <c:if test="${msg!=''}">
+      <h6 align="center">${msg}</h6>
+     </c:if>
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form>
+        <form action="${baseURL}/login_user" method="post">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="email">Email address</label>
+            <input class="form-control" id="email" name="email" type="email" aria-describedby="emailHelp" placeholder="Enter email">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+            <label for="password">Password</label>
+            <input class="form-control" id="password" name="password" type="password" placeholder="Password">
           </div>
           <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Remember Password</label>
+                <input class="form-check-input" name="rememberPassword" type="checkbox"> Remember Password</label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="${baseURL}/views/index.jsp">Login</a>
+          <button class="btn btn-primary btn-block">Login</button>
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="${baseURL}/views/register_page.jsp">Register an Account</a>

@@ -27,22 +27,5 @@
         </div>
       </div>
     </div>
-    
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<!-- Bootstrap core JavaScript-->
-<script src="${baseURL}/assets/vendor/jquery/jquery.min.js"></script>
-<script src="${baseURL}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Core plugin JavaScript-->
-<script src="${baseURL}/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-<!-- Page level plugin JavaScript-->
-<script src="${baseURL}/assets/vendor/chart.js/Chart.min.js"></script>
-<script src="${baseURL}/assets/vendor/datatables/jquery.dataTables.js"></script>
-<script src="${baseURL}/assets/vendor/datatables/dataTables.bootstrap4.js"></script>
-<!-- Custom scripts for all pages-->
-<script src="${baseURL}/assets/js/sb-admin.js"></script>
-<!-- Custom scripts for this page-->
-<script src="${baseURL}/assets/js/sb-admin-datatables.js"></script>
-<script src="${baseURL}/assets/js/sb-admin-charts.js"></script>
-</div>
 </body>
 </html>
