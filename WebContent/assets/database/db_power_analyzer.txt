@@ -1,0 +1,10 @@
+
+
+CREATE TABLE user (
+  user_id int(11) NOT NULL auto_increment,
+  first_name varchar(25) NOT NULL,
+  last_name varchar(25) NOT NULL,
+  email varchar(50) default NULL,
+  password varchar(50) NOT NULL,
+  PRIMARY KEY  (user_id)
+) 
