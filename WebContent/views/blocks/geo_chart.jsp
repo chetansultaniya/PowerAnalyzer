@@ -17,8 +17,10 @@
 		 
           <!-- Card Columns Example Social Feed-->
           <div class="col-lg-12">
-            <i class="fa fa-newspaper-o"></i> Geo Chart</div>
-          <hr class="mt-2">
+            <i class="fa fa-newspaper-o"></i> Geo Chart><b>Power Generation of 2017 in kw</b></div>
+            <hr class="mt-2">
+                     
+          
           <div id="regions_div" style="width: 1080px; height: 600px;"></div>
 		 
         </div>
