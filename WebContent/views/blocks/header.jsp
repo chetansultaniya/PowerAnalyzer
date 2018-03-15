@@ -37,6 +37,8 @@
 <script src="${baseURL}/assets/js/sb-admin-datatables.js"></script>
 <script src="${baseURL}/assets/js/sb-admin-charts.js"></script>
 <script src="${baseURL}/assets/js/drawLineChart.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 <script type="text/javascript">
       google.charts.load('current', {
