@@ -79,7 +79,7 @@ function demo()
 $(document).ready(function(){
  $('#load_data').click(function(){
   $.ajax({
-   url:"${baseURL}/assets/csvfiles/"+selectedState+".csv",
+   url:"${baseURL}/assets/csvfiles/"+	+".csv",
    dataType:"text",
    success:function(data)
    {
