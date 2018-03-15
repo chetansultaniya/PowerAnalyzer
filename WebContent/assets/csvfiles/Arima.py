@@ -36,7 +36,7 @@ def test_stationarity(timeseries):
 
 
 dateparse = lambda dates: pd.datetime.strptime(dates, '%Y-%m')
-data = pd.read_csv('mp.csv', parse_dates=['Month'], index_col='Month',date_parser=dateparse)
+data = pd.read_csv('West_Bengal.csv', parse_dates=['Month'], index_col='Month',date_parser=dateparse)
 
 ts = data['ACTUAL GENERATION']
 ts_log = np.log(ts)
@@ -65,14 +65,14 @@ ts_forecast = np.exp(ts_log_forecast)
 
 
 
-np.savetxt('mp1.csv', ts_forecast, delimiter=',', fmt='%d')
-variable = np.loadtxt('mp1.csv', delimiter=',')
+np.savetxt('West_Bengal1.csv', ts_forecast, delimiter=',', fmt='%d')
+variable = np.loadtxt('West_Bengal1.csv', delimiter=',')
 #print(variable)
 
 
 # Display the graph
 plt.plot(ts_forecast, color='green')
 plt.plot(ts, color='blue')
-plt.savefig('myfig')
+plt.savefig('West_Bengal')
 plt.show()
 
