@@ -10,11 +10,7 @@
 		<option value="Arunachal_Pradesh">Arunachal Pradesh</option>
 		<option value="Assam">Assam</option>
 		<option value="Bihar">Bihar</option>
-		<option value="Chandigarh">Chandigarh</option>
-		<option value="Chhattisgarh">Chhattisgarh</option>
-		<option value="Dadra_and_Nagar_Haveli">Dadra and Nagar Haveli</option>
-		<option value="Daman_and_Diu">Daman and Diu</option>
-		<option value="Delhi">Delhi</option>
+		<option value="Chandigarh">Chhattisgarh</option>
 		<option value="Goa">Goa</option>
 		<option value="Gujarat">Gujarat</option>
 		<option value="Haryana">Haryana</option>
@@ -23,27 +19,19 @@
 		<option value="Jharkhand">Jharkhand</option>
 		<option value="Karnataka">Karnataka</option>
 		<option value="Kerala">Kerala</option>
-		<option value="Lakshadweep">Lakshadweep</option>
-		<option value="Madhya_Pradesh">Madhya Pradesh</option>
+		<option value="mp">Madhya Pradesh</option>
 		<option value="Maharashtra">Maharashtra</option>
 		<option value="Manipur">Manipur</option>
 		<option value="Meghalaya">Meghalaya</option>
-		<option value="Mizoram">Mizoram</option>
 		<option value="Nagaland">Nagaland</option>
 		<option value="Orissa">Orissa</option>
-		<option value="Pondicherry">Pondicherry</option>
 		<option value="Punjab">Punjab</option>
 		<option value="Rajasthan">Rajasthan</option>
-		<option value="Sikkim">Sikkim</option>
 		<option value="Tamil_Nadu">Tamil Nadu</option>
 		<option value="Tripura">Tripura</option>
 		<option value="Uttaranchal">Uttaranchal</option>
 		<option value="Uttar_Pradesh">Uttar Pradesh</option>
 		<option value="West_Bengal">West Bengal</option>
-        <option value="mp">mp</option>
-        <option value="ap">ap</option>
-        <option value="mp1">mp1</option>
-        <option value="mp2">mp2</option>
       </select><br>
       <button style="" class="btn btn-primary" id="load_data">Load Data</button>
     </div>
@@ -79,7 +67,7 @@ function demo()
 $(document).ready(function(){
  $('#load_data').click(function(){
   $.ajax({
-   url:"${baseURL}/assets/csvfiles/"+	+".csv",
+   url:"${baseURL}/assets/csvfiles/"+selectedState+".csv",
    dataType:"text",
    success:function(data)
    {

@@ -18,12 +18,12 @@
             <label for="password">Password</label>
             <input class="form-control" id="password" name="password" type="password" placeholder="Password">
           </div>
-          <div class="form-group">
+   <!--         <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
                 <input class="form-check-input" name="rememberPassword" type="checkbox"> Remember Password</label>
             </div>
-          </div>
+          </div>-->
           <button class="btn btn-primary btn-block">Login</button>
         </form>
         <div class="text-center">
