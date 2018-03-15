@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import utils.DbConnection;
 
@@ -37,6 +38,8 @@ public class LoginController extends HttpServlet {
 			 ResultSet rs=st.executeQuery(query);
 		        if(rs.next())
 		        {
+		        	HttpSession session=request.getSession();
+		        	session.setAttribute("first_name",rs.getString("first_name"));
 		        	RequestDispatcher rd=request.getRequestDispatcher("/views/index.jsp");
 					rd.forward(request,response);
 		        }

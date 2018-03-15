@@ -22,10 +22,11 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="${baseURL}/views/login_page.jsp">Logout</a>
+            <a class="btn btn-primary" href="${baseURL}/logout_user">Logout</a>
           </div>
         </div>
       </div>
     </div>
+    <script src="${baseURL}/assets/js/sb-admin-charts.js"></script>
 </body>
 </html>

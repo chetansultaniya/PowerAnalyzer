@@ -14,7 +14,7 @@
         <div class="card-header">
           <i class="fa fa-line-chart"></i> Line Chart Example</div>
         <div class="card-body">
-          <canvas id="myLineChart" width="100%" height="30"></canvas>
+           <div id="chart_div" style="width:100%;height:400px;"></div>
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
       </div>
