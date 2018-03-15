@@ -8,10 +8,30 @@
         <li class="breadcrumb-item active">My Profile</li>
       </ol>
       <div class="row">
-        <div class="col-12">
-          <h1>Blank</h1>
-          <p>This is an example of a blank page that you can use as a starting point for creating new ones.</p>
-        </div>
+        <div class="col-8">
+          <h1>Profile</h1>
+          <div class="table-responsive">          
+			  <table class="table">
+			    <thead>
+			      <tr>
+			        <th>First Name</th>
+			        <td><%=session.getAttribute("first_name") %></td>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+			        <th>Last Name</th>
+			        <td><%=session.getAttribute("last_name") %></td>
+			      </tr>
+			      <tr>
+			        <th>Email</th>
+			        <td><%=session.getAttribute("email") %></td>
+			      </tr>
+			    </tbody>
+			  </table>
+  			</div>
+		</div>
+       </div>
       </div>
     </div>
     <!-- /.container-fluid-->

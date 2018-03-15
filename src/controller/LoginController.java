@@ -40,6 +40,8 @@ public class LoginController extends HttpServlet {
 		        {
 		        	HttpSession session=request.getSession();
 		        	session.setAttribute("first_name",rs.getString("first_name"));
+		        	session.setAttribute("last_name",rs.getString("last_name"));
+		        	session.setAttribute("email",rs.getString("email"));
 		        	RequestDispatcher rd=request.getRequestDispatcher("/views/index.jsp");
 					rd.forward(request,response);
 		        }

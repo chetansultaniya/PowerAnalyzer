@@ -51,4 +51,58 @@
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
+
+<!-- start Line Chart code -->
     
+    <script type="text/javascript">
+		google.load('visualization', '1.0', {'packages':['corechart']});
+		google.setOnLoadCallback(BasicLine);
+		function BasicLine() {
+			$.get("${baseURL}/assets/csvfiles/mp2.csv", function(csvString) {
+				var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar}),
+					data      = new google.visualization.arrayToDataTable(arrayData),
+					options   = {
+								  hAxis: {
+									title: 'Month(2011-2016)',
+									direction:-1,
+									slantedText:true, 
+									slantedTextAngle:90,
+									textStyle: {
+										 color: '#01579b',
+										 fontSize: 8,
+										 fontName: 'Arial',
+										 bold: true
+									  },
+									  titleTextStyle: {
+										 color: '#01579b',
+										 fontSize: 15,
+										 fontName: 'Arial',
+										 bold: true,
+									  }
+								  },
+								  vAxis: {
+									title: 'Actual Generation',
+									textStyle: {
+										 color: '#1a237e',
+										 fontSize: 12,
+										 bold: true
+									  },
+									  titleTextStyle: {
+										 color: '#1a237e',
+										 fontSize: 15,
+										 fontName: 'Arial',
+										 bold: true
+									  }
+								  },
+								  backgroundColor: '#f1f8e9',
+								  pointsVisible: true,
+								  pointSize: 3,
+								  colors: ['#a52714']
+								},
+					chart     = new google.visualization.LineChart(document.getElementById('chart_div'));
+				chart.draw(data, options);
+			},
+			'text');
+		}
+	</script>
+<!-- end Line Chart code -->

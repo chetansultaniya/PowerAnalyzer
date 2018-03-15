@@ -37,7 +37,9 @@
 <script src="${baseURL}/assets/js/sb-admin-datatables.js"></script>
 <script src="${baseURL}/assets/js/sb-admin-charts.js"></script>
 <script src="${baseURL}/assets/js/drawLineChart.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="${baseURL}/assets/others/jsapi"></script>
+<script src="${baseURL}/assets/js/jquery-2.1.1.js"></script>
+<script src="${baseURL}/assets/js/jquery.csv-0.71.min.js"></script>
 
 
 <script type="text/javascript">
