@@ -28,7 +28,6 @@
 						<li><a href="${baseURL}/views/hydro_power_page.jsp">Hydro power plants</a></li>
 						<li><a href="${baseURL}/views/thermal_power_page.jsp">Thermal power plants</a></li>
 						<li><a href="${baseURL}/views/rainfall_page.jsp">Annual rainfall</a></li>
-						<li><a href="">***left content***</a></li>
 					</ul></li>
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
 					title="Charts"><a class="nav-link" href="${baseURL}/views/other_chart_page.jsp"> <i

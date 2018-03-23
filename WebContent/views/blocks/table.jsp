@@ -1,11 +1,16 @@
 <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs--> 
-    <div class="form-group" style="width:25%;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables</li>
+      </ol>
+      <div class="form-group" style="width:25%;">
       <label for="sel1">Select state to show data</label>
       <select class="form-control" id="stateList" onchange="demo()">
       	<option value="">------------Select State------------</option>
-		<option value="Andaman_and_Nicobar_Islands">Andaman and Nicobar Islands</option>
 		<option value="Andhra_Pradesh">Andhra Pradesh</option>
 		<option value="Arunachal_Pradesh">Arunachal Pradesh</option>
 		<option value="Assam">Assam</option>
@@ -35,16 +40,10 @@
       </select><br>
       <button style="" class="btn btn-primary" id="load_data">Load Data</button>
     </div>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
-        </li>
-        <li class="breadcrumb-item active">Tables</li>
-      </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Example</div>
+          <i class="fa fa-table" id="datatable_title"></i> Data Table</div>
         <div class="card-body">
           <div class="table-responsive" id="stateDataTable">
            
@@ -66,6 +65,7 @@ function demo()
 }
 $(document).ready(function(){
  $('#load_data').click(function(){
+	 $("#datatable_title").html("&nbsp;"+selectedState);
   $.ajax({
    url:"${baseURL}/assets/csvfiles/"+selectedState+".csv",
    dataType:"text",

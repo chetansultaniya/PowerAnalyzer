@@ -27,6 +27,5 @@
         </div>
       </div>
     </div>
-    <script src="${baseURL}/assets/js/sb-admin-charts.js"></script>
 </body>
 </html>

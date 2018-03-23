@@ -1,11 +1,16 @@
 <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
-      <div class="form-group" style="width:25%;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Charts</li>
+      </ol>
+       <div class="form-group" style="width:25%;">
       <label for="sel1">Select state to show data</label>
       <select class="form-control" id="stateList">
       	<option value="">------------Select State------------</option>
-		<option value="Andaman_and_Nicobar_Islands">Andaman and Nicobar Islands</option>
 		<option value="Andhra_Pradesh">Andhra Pradesh</option>
 		<option value="Arunachal_Pradesh">Arunachal Pradesh</option>
 		<option value="Assam">Assam</option>
@@ -35,18 +40,10 @@
       </select><br>
       <button style="" class="btn btn-primary" id="load_data" onclick="BasicLine()">Load Data</button>
     </div>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
-        </li>
-        <li class="breadcrumb-item active">Charts</li>
-      </ol>
-      
-      
       <!-- line Chart Example-->
        <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-line-chart"></i> Line Chart Example</div>
+          <i class="fa fa-line-chart" id="linechart_title"></i> Line Chart</div>
         <div class="card-body">
            <div id="chart_div" style="width:100%;height:400px;"></div>
         </div>
@@ -59,37 +56,11 @@
       <!-- predicted line Chart Example-->
        <div class="card mb-3" id="predictedResult" style="display:none">
         <div class="card-header">
-          <i class="fa fa-line-chart"></i> Line Chart Example</div>
+          <i class="fa fa-line-chart" id="predictedlinechart_title"></i> Predicted Line Chart</div>
         <div class="card-body">
            <div id="predicted_chart_div" style="width:100%;height:400px;"></div>
         </div>
       </div>
-        
-          <!-- Example Bar Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
-            <div class="card-body">
-                         <div id="myBarChart" style="width:100%;height:400px;"></div>
-            
-            
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-      
-        
-          <!-- Example Pie Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
-            <div class="card-body">
-            
-             <div id="myPieChart" style="width:100%;height:400px;"></div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-       
-    
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
@@ -100,8 +71,10 @@
 google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(BasicLine);
 function BasicLine() {
+	
 	var e = document.getElementById("stateList");
 	selectedState = e.options[e.selectedIndex].value;
+	$("#linechart_title").html("&nbsp;"+selectedState);
 	$.get("${baseURL}/assets/csvfiles/linechart/"+selectedState+".csv", function(csvString) {
 		var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar}),
 			data      = new google.visualization.arrayToDataTable(arrayData),
@@ -158,6 +131,7 @@ function BasicLine() {
 google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(predictedLine);
 function predictedLine() {
+	$("#predictedlinechart_title").html("&nbsp;"+selectedState);
 	$.get("${baseURL}/assets/csvfiles/linechart/"+selectedState+"1.csv", function(csvString) {
 		var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar}),
 			data      = new google.visualization.arrayToDataTable(arrayData),

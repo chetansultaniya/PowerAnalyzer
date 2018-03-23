@@ -17,7 +17,7 @@
 		 
           <!-- Card Columns Example Social Feed-->
           <div class="col-lg-12">
-            <i class="fa fa-newspaper-o"></i>Hydro Power Plant Geo Chart</div>
+            <i class="fa fa-newspaper-o"></i> Hydro Power Plant Geo Chart</div>
           <hr class="mt-2">
           <div id="regions_div" style="width: 1080px; height: 600px;"></div>
 		 
