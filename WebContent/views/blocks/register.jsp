@@ -2,7 +2,7 @@
 <div class="container">
     <div class="card card-register mx-auto mt-5">
      <c:if test="${error_msg!=''}">
-      <h6 align="center">${error_msg}</h6>
+      <h6 align="center" style="color:red">${error_msg}</h6>
      </c:if>
       <div class="card-header">Register an Account</div>
       <div class="card-body">
@@ -27,11 +27,13 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="password">Password</label>
-                <input class="form-control" id="password" name="password" type="password" placeholder="Password">
+                <input class="form-control" id="password" id="password" name="password" type="password" placeholder="Password" onkeyup="pass()">
+                <b><span id="pass">&nbsp;&nbsp;</span></b>
               </div>
               <div class="col-md-6">
                 <label for="cPassword">Confirm password</label>
-                <input class="form-control" id="cPassword" name="cPassword" type="password" placeholder="Confirm password">
+                <input class="form-control" id="cPassword" id="cPassword" name="cPassword" type="password" placeholder="Confirm password" onkeyup="cPass()">
+                <b><span id="cpass">&nbsp;&nbsp;</span></b>
               </div>
             </div>
           </div>
@@ -44,4 +46,40 @@
       </div>
     </div>
   </div>
+  <script>
+    function pass()
+    {
+    	 var len=document.getElementById("password").value.length;
+    	 if(len<=4)
+   		 {
+    		document.getElementById('pass').style.color="red";
+   		  	document.getElementById("pass").innerHTML="&nbsp;&nbsp;Weak";
+   		 }
+    	 else if(len<=7)
+   		 {
+    		document.getElementById('pass').style.color="brown";
+   		  	document.getElementById("pass").innerHTML="&nbsp;&nbsp;Good";
+   		 }
+    	 else
+   		 {
+    		 document.getElementById('pass').style.color="green";
+    		 document.getElementById("pass").innerHTML="&nbsp;&nbsp;Strong";
+   		 }
+    }
+    function cPass()
+    {
+    	var pass=document.getElementById("password").value;
+    	var cpass=document.getElementById("cPassword").value;
+    	if(pass!=cpass)
+   		{
+    		document.getElementById('cpass').style.color="red";
+   			document.getElementById("cpass").innerHTML="&nbsp;&nbsp;Not match";
+   		} 	
+    	else
+    	{
+    		document.getElementById('cpass').style.color="green";
+    		document.getElementById("cpass").innerHTML="&nbsp;&nbsp;matched";
+    	}
+    }
+  </script>
   </body>

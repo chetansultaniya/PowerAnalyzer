@@ -2,10 +2,10 @@
  <div class="container">
     <div class="card card-login mx-auto mt-5">
      <c:if test="${error_msg!=''}">
-      <h6 align="center" color= "red" >${error_msg}</h6>
+      <h6 align="center" style="color:red" >${error_msg}</h6>
      </c:if>
       <c:if test="${msg!=''}">
-      <h6 align="center">${msg}</h6>
+      <h6 align="center" style="color:green">${msg}</h6>
      </c:if>
       <div class="card-header">Login</div>
       <div class="card-body">

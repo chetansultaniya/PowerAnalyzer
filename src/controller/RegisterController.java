@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
@@ -34,28 +35,40 @@ public class RegisterController extends HttpServlet{
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		//String cPassword=request.getParameter("cPassword");
-		
+		ResultSet rs;
 		try
 		{
 			Connection con=DbConnection.getDbConnection();
 			Statement st=con.createStatement();
-			String query="insert into user(first_name,last_name,email,password)"+
-					" values('"+fName+"','"+lName+"','"+email+"','"+password+"')";
-			
-			int x=st.executeUpdate(query);
-			if(x!=0)
+			String q="select * from user where email='"+email+"'";
+			rs=st.executeQuery(q);
+			if(rs.next())
 			{
-				RequestDispatcher rd=request.getRequestDispatcher("/views/login_page.jsp");
-				request.setAttribute("msg", "Registration successfull please login");
-				rd.forward(request,response);
-				
+				RequestDispatcher rd=request.getRequestDispatcher("/views/register_page.jsp");
+				request.setAttribute("error_msg", "this email is already registered");
+				rd.include(request,response);
 			}
 			else
 			{
-				RequestDispatcher rd=request.getRequestDispatcher("/views/register_page.jsp");
-				request.setAttribute("error_msg", "Registration successfull");
-				rd.include(request,response);
+				String query="insert into user(first_name,last_name,email,password)"+
+						" values('"+fName+"','"+lName+"','"+email+"','"+password+"')";
+				
+				int x=st.executeUpdate(query);
+				if(x!=0)
+				{
+					RequestDispatcher rd=request.getRequestDispatcher("/views/login_page.jsp");
+					request.setAttribute("msg", "Registration successfull please login");
+					rd.forward(request,response);
+					
+				}
+				else
+				{
+					RequestDispatcher rd=request.getRequestDispatcher("/views/register_page.jsp");
+					request.setAttribute("error_msg", "Registration failed");
+					rd.include(request,response);
+				}
 			}
+			
 		}
 		catch(Exception e) {
 			
